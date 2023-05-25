@@ -1,9 +1,30 @@
 package com.hugsy.springbatchimpl.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table
 public class Payment {
+    @Id
+    @Column(name = "id", nullable = false)
+    private Long id;
+    @Column(name = "amount")
     private Long amount;
+    @Column(name = "source_account")
     private String sourceAccount;
+    @Column(name = "destination account")
     private String destinationAccount;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Payment() {
     }
